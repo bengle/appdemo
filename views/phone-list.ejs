@@ -1,0 +1,21 @@
+<div class="span10" ng-controller="PhoneListCtrl">
+    <!--Body content-->
+
+    <ul class="phones">
+        <li ng-repeat="phone in phones" class="thumbnail">
+            <div style="display:inline-block;max-height:150px;">
+                <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+            </div>
+            <div style="display:inline-block;max-height:150px;">
+                <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+                <p>{{phone.snippet}}</p>
+            </div>
+        </li>
+    </ul>
+
+</div>
+<style>
+    ul{margin:0;}
+    li{list-style: none;}
+    .thumbnail{margin:5px;}
+</style>

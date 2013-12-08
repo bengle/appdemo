@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Nexus S",
+        "snippet": "Fast just got faster with Nexus S.",
+        "imageUrl":"http://www.hqb.me/wp-content/uploads/2011/04/001771356-150x150.jpg",
+        "age": 1
+    },
+    {
+        "name": "Motorola XOOM™ with Wi-Fi",
+        "snippet": "The Next, Next Generation tablet.",
+        "imageUrl":"http://www.hqb.me/wp-content/uploads/2011/04/DSC02838-150x150.jpg",
+        "age": 2
+    },
+    {
+        "name": "MOTOROLA XOOM™",
+        "snippet": "The Next, Next Generation tablet.",
+        "imageUrl":"http://www.hqb.me/wp-content/uploads/2011/04/001771356-150x150.jpg",
+        "age": 3
+    }
+]
