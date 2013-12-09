@@ -4,12 +4,12 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('themes/phones/index', {  });
 };
 exports.list = function(req, res){
     //console.log('list');
-    res.render('phone-list', { title: 'Express' });
+    res.render('themes/phones/phone-list', {  });
 };
 exports.detail = function(req, res){
-    res.render('phone-detail', { title: 'Express' });
+    res.render('themes/phones/phone-detail', {  });
 };

@@ -1,11 +1,12 @@
-<% include ./common/header.html %>
+<% include common/header.html %>
     <nav class="top-bar" data-topbar>
         <ul class="title-area">
             <li class="name">
-                <h1><a href="#">My Site</a></h1>
+                <h1><a href="">Many Phones</a></h1>
             </li>
         </ul>
     </nav>
+
     <div ng-app="AppDemo">
         <div ng-view></div>
     </div>
@@ -39,9 +40,11 @@
 
             //$scope.orderProp = 'age';
         }]);
-        phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
-            function($scope, $routeParams) {
-                $scope.phoneId = $routeParams.phoneId;
-        }]);
+        phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
+            function($scope, $routeParams, $http) {
+                $http.get('/mock/' + $routeParams.phoneId + '.json').success(function(data) {
+                    $scope.phone = data;
+                });
+            }]);
     </script>
-<% include ./common/footer.html %>
+<% include common/footer.html %>
