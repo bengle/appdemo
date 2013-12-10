@@ -1,11 +1,7 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , routes = require('./routes')
-  , http = require('http');
+  , http = require('http')
+    , conn = require('./modules/db_connect');
 
 var app = express();
 
@@ -27,6 +23,24 @@ app.configure(function(){
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
+
+conn.connect('localhost','test');
+conn.initBlog();
+/*
+conn.addOne({
+    title: 'this is my blog title',
+    author: 'me',
+    body: 'the body of my blog. can you see that?'
+});
+*/
+conn.findOneById({ author: "me"},function(err, d){
+    console.log(d);
+});
+conn.update({ author: 'me' }, { title: 'new title' }, { multi: true }, function (err, numberAffected, raw) {
+    if (err) return handleError(err);
+    console.log('The number of updated documents was %d', numberAffected);
+    console.log('The raw response from Mongo was ', raw);
+})
 
 app.get('/', routes.index);
 app.get('/phone-list', routes.list);
